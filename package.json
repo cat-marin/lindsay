@@ -1,0 +1,19 @@
+{
+  "name": "lindsay",
+  "version": "1.0.0",
+  "description": "Yet another shitty discord bot for our Discord server. The Nixfits.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cat-marin/lindsay.git"
+  },
+  "author": "cat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cat-marin/lindsay/issues"
+  },
+  "homepage": "https://github.com/cat-marin/lindsay#readme"
+}
