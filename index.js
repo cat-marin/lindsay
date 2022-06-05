@@ -1,8 +1,22 @@
 #!/usr/bin/env node
-const { Client, Intents } = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
+const { token } = require ('./token.json');
+const fs = require('node:fs');
+const path = require('node:path');
 
 // new bot instance
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+bot.commands = new Collection();
+
+const modulePath = path.join(__dirname, 'modules');
+const moduleFiles = fs.readdirSync(modulePath).filter(file => file.endsWith('.js'));
+
+for (const file of moduleFiles) {
+	const filePath = path.join(modulePath, file);
+	const module = require(filePath);
+	bot.commands.set(module.data.name, module);
+}
 
 bot.on('ready', () => {
 	console.log(`Logged in as ${bot.user.tag}!`);
@@ -10,4 +24,20 @@ bot.on('ready', () => {
 	
 });
 
-bot.login(process.env.TOKEN);
+bot.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const command = bot.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'An error occurred', ephemeral: true });
+	}
+});
+
+
+bot.login(token);
