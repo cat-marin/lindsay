@@ -20,7 +20,7 @@ for (const file of moduleFiles) {
 
 bot.on('ready', () => {
 	console.log(`Logged in as ${bot.user.tag}!`);
-	console.log(`https://discordapp.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=0&scope=bot`);
+	console.log(`https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot%20applications.commands`);
 	
 });
 
@@ -39,5 +39,6 @@ bot.on('interactionCreate', async interaction => {
 	}
 });
 
+bot.on("error", console.error);
 
 bot.login(token);
