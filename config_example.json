@@ -1,8 +1,13 @@
 {
-	"clientId": "the client id for your bot in the discord developer portal",
-	"guildId": "the guild id for the server you're running the bot in",
+	"bot": {
+		"clientId": "",
+		"guildId": "",
+		"token": "",
+		"activity": ""
+	},
 	"joinmessages": {
+		"description": "If you prefer to use the discord provided join messages or the join messages of another bot, this is where you would disable this feature.",
 		"enable": false,
-		"channelId": "the channel id you want join messages to appear in"
+		"channelId": ""
 	}
 }
