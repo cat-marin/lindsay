@@ -1,5 +1,8 @@
 {
-	"clientId": "",
-	"guildId": "",
-	"joinmessagesChannelId": ""
+	"clientId": "the client id for your bot in the discord developer portal",
+	"guildId": "the guild id for the server you're running the bot in",
+	"joinmessages": {
+		"enable": false,
+		"channelId": "the channel id you want join messages to appear in"
+	}
 }
