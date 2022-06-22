@@ -10,6 +10,7 @@ module.exports = {
 		client.user.setPresence({activities: [{ name: `${bot.activity}` }], status: 'online' });
 		console.log(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands`);
 		// command reload start
+		client.commands.set([]);
 		const CLIENT_ID = client.user.id;
 		const rest = new REST({
 			version: "9",
