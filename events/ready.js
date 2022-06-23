@@ -21,7 +21,7 @@ module.exports = {
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
 					body: commands,
 				});
-				console.log("Registered commands!");
+				console.log("Reloaded commands!");
 			} catch (err) {
 				if (err) console.error(err);
 			}
