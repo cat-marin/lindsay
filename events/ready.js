@@ -8,6 +8,7 @@ module.exports = {
 	execute(client, commands) {
 		console.log(`Logged in as ${client.user.tag}!`);
 		client.user.setPresence({activities: [{ name: `${bot.activity}` }], status: 'online' });
+		setInterval(activity => {client.user.setPresence({activities: [{ name: `${bot.activity}` }], status: 'online' }) }, 3600000);
 		console.log(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands`);
 		// command reload start
 		client.commands.set([]);
@@ -26,5 +27,6 @@ module.exports = {
 				if (err) console.error(err);
 			}
 		})();
+		// command reload end
 	},
 };
