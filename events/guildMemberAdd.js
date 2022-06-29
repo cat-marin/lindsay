@@ -13,7 +13,7 @@ module.exports = {
 		
 		const joinEmbed = new MessageEmbed()
 		        .setColor(`${config.embeds.color}`)
-		        .setTitle(`${member.displayName.toString()} joined the server!`)
+		        .setTitle(`<@${member.user.id}> joined the server!`)
 		        .setDescription(`${finalmessage}`)
 			.setThumbnail(member.displayAvatarURL({ dynamic: false }))
 			.addFields(
