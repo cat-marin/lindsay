@@ -14,7 +14,7 @@ const client = new Client({
 });
 
 
-// command/event handling start
+// command handling start
 client.commands = new Collection();
 
 const commands = [];
@@ -27,7 +27,9 @@ for (const file of moduleFiles) {
 	commands.push(module.data.toJSON());
 	client.commands.set(module.data.name, module);
 }
+// command handling end
 
+// event handling start
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
@@ -40,7 +42,7 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args, commands));
 	}
 }
-// command/event handling end
+// event handling end
 
 client.on("error", console.error);
 
