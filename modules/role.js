@@ -13,7 +13,7 @@ module.exports = {
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('add')
-				.setDescription('Adds a role.')
+				.setDescription('Adds a role. Role names are cAsE sEnSiTiVe.')
 				.addStringOption(option =>
 					option
 						.setName('role')
@@ -22,7 +22,7 @@ module.exports = {
 		.addSubcommand(subcommand =>
 		        subcommand
 		                .setName('remove')
-		                .setDescription('Removes a role.')
+		                .setDescription('Removes a role. Role names are cAsE sEnSiTiVe.')
 		                .addStringOption(option =>
 		                        option
 		                                .setName('role')
