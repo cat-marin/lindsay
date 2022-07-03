@@ -18,7 +18,7 @@ module.exports = {
 		const infoEmbed = new MessageEmbed()
 			.setColor(`${embeds.color}`)
 			.setTitle(`${user.tag}`)
-			.setThumbnail(user.displayAvatarURL({ dynamic: false }))
+			.setThumbnail(user.displayAvatarURL({ dynamic: false, format: 'png', size: 512 }))
 			.setDescription(`<@${user.id}>`)
 			.addFields(
 				{ name: 'ID', value: `${user.id}` },
