@@ -4,7 +4,7 @@ const { verify } = require('../config.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('verify')
-		.setDescription('Verification command.'),
+		.setDescription('Verification command for #tech-support.'),
 	async execute(interaction) {
 		const role = verify.roleId;
 		if(interaction.member.roles.cache.has(role)) return interaction.reply("You've already been verified.");
