@@ -31,16 +31,18 @@ module.exports = {
 		execute(interaction) {
 			const arg = interaction.options.getSubcommand();
 			const roleName = interaction.options.getString('role');
-			const roleToAdd = interaction.options.getRole(roleName);
 			const roleId = interaction.guild.roles.cache.find(r => r.name === `${roleName}`);
+			let items = "Available roles (these are cAsE sEnSiTivE):";
+			var num = 1;
 			switch(arg) {
 				case 'list':
 					const listEmbed = new MessageEmbed()
 						.setColor(embeds.color)
-						.setTitle('Roles List')
-						.setDescription('Available roles (these are cAsE sEnSiTivE)');
+						.setTitle('Roles');
 					Object.keys(role).slice(1).forEach(function(key){
-						listEmbed.addField(`${key}`, `\u200e`, false);
+						items = items + `\n${num}. ${key}`;
+						num++;
+						listEmbed.setDescription(items);
 					});
 					return interaction.reply({ embeds: [ listEmbed ] });
 					break;
