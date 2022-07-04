@@ -46,7 +46,7 @@ module.exports = {
 					break;
 				case 'add':
 					if(interaction.member.roles.cache.find(r => r.name === `${roleName}`)) return interaction.reply("You already have that role.");
-					if(!Object.keys(role).slice(1).includes(roleName)) return interaction.reply("That role is not self-assignable.");
+					if(!Object.keys(role).slice(1).includes(roleName)) return interaction.reply("That role is not self-assignable or does not exist (role names are cAsE sEnSiTiVe).");
 					interaction.member.roles.add(roleId).catch(console.error);
 					interaction.reply(`You were given the ${roleName} role!`);
 					break;
