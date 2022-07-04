@@ -3,11 +3,29 @@
 		"clientId": "",
 		"guildId": "",
 		"token": "",
-		"activity": ""
+		"activity": "Hi! I'm Lindsay.",
+		"moduleReload": true
+	},
+	"security": {
+		"description": "This is where you define anything related to permissions management like Admin/Mod roles, the permission denied message, etc.",
+		"adminRoleId": "",
+		"modRoleId": "",
+		"permDeniedMessage":"You can't do that."
+	},
+	"embeds": {
+		"color": "#D00B00"
 	},
 	"joinmessages": {
 		"description": "If you prefer to use the discord provided join messages or the join messages of another bot, this is where you would disable this feature.",
 		"enable": false,
 		"channelId": ""
+	},
+	"verify": {
+		"roleId": ""
+	},
+	"role": {
+		"description": "This is where you will need to whitelist roles that can be added by the role command.",
+		"role1": "role1",
+		"role2": "role2"
 	}
 }
