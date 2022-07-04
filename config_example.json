@@ -24,7 +24,7 @@
 		"roleId": ""
 	},
 	"role": {
-		"description": "This is where you will need to whitelist roles that can be added by the role command.",
+		"description": "This is where you will need to whitelist roles that can be added by the role command. The value of eaach object is not used and is not important.",
 		"role1": "role1",
 		"role2": "role2"
 	}
