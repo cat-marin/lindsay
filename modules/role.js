@@ -32,7 +32,7 @@ module.exports = {
 			const arg = interaction.options.getSubcommand();
 			const roleName = interaction.options.getString('role');
 			const roleId = interaction.guild.roles.cache.find(r => r.name === `${roleName}`);
-			let items = "";
+			let items = "Available roles (these are cAsE sEnSiTivE):\n";
 			var num = 1;
 			switch(arg) {
 				case 'list':
