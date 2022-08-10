@@ -19,9 +19,13 @@ module.exports = {
 			.addFields(
 				{ name: 'Account Created', value: `${member.user.createdAt.toLocaleString()}` },
 				{ name: 'Days Since Account Creation', value: `${daysSinceCreation}` },
-			)
-			.setFooter({ text: `Be sure to use #tech-support for support, and read the required reading in the channel topic to be verified.` });
+			);
+			if(config.joinmessages.enableFooter) {
+			joinEmbed.setFooter({ text: `Be sure to use #tech-support for support, and read the required reading in the channel topic to be verified.` });
+			}
 	
 		member.guild.channels.cache.get(config.joinmessages.channelId).send({ embeds: [joinEmbed] });
+		if(!config.joinmessages.enableDirectMessage) return;
+		member.send(config.joinmessages.dmContent);
 	},
 };
