@@ -18,7 +18,11 @@
 	"joinmessages": {
 		"description": "If you prefer to use the discord provided join messages or the join messages of another bot, this is where you would disable this feature.",
 		"enable": false,
-		"channelId": ""
+		"channelId": "",
+		"enableFooter": false,
+		"footerContent": "This is footer content.",
+		"enableDirectMessage": false,
+		"dmContent": "This is dm content"
 	},
 	"verify": {
 		"roleId": ""
