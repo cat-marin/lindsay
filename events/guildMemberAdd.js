@@ -21,7 +21,7 @@ module.exports = {
 				{ name: 'Days Since Account Creation', value: `${daysSinceCreation}` },
 			);
 			if(config.joinmessages.enableFooter) {
-			joinEmbed.setFooter({ text: `Be sure to use #tech-support for support, and read the required reading in the channel topic to be verified.` });
+			joinEmbed.setFooter({ text: `${config.joinmessages.footerContent}` });
 			}
 	
 		member.guild.channels.cache.get(config.joinmessages.channelId).send({ embeds: [joinEmbed] });
