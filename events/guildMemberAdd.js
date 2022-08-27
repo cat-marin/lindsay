@@ -26,6 +26,7 @@ module.exports = {
 	
 		member.guild.channels.cache.get(config.joinmessages.channelId).send({ embeds: [joinEmbed] });
 		if(!config.joinmessages.enableDirectMessage) return;
-		member.send(config.joinmessages.dmContent);
+		member.send(config.joinmessages.dmContent)
+			.catch(() => member.guild.channels.cache.get(config.joinmessages.channelId).send(`<@${member.id}> ${config.joinmessages.dmContent}`));
 	},
 };
